@@ -1,1 +1,1 @@
-import "./my-element";
+export {};
