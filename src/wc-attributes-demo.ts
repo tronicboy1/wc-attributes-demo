@@ -21,11 +21,12 @@ export class WcAttributesDemo extends LitElement {
     },
   })
   isEditMode = false;
+
   setAttributes?: (props: Record<string, any>) => void;
 
   private coLinkMap = new Map<string, URL>([
     ["google", new URL("https://www.google.com")],
-    ["catena", new URL("https://www.catenamedia.com/")],
+    ["microsoft", new URL("https://www.microsoft.com/")],
   ]);
 
   private handleSubmit(event: Event) {
