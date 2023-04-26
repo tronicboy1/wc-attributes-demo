@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "wc/attributes-demo",
+  "version": "0.0.0",
+  "title": "Wc Attributes Demo",
+  "category": "widgets",
+  "icon": "menu",
+  "description": "Example static block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wc",
+  "attributes": {
+    "message": {
+      "type": "string",
+      "default": ""
+    },
+    "edit": {
+      "type": "boolean",
+      "default": "false"
+    }
+  }
+}

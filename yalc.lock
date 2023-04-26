@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@types/wp-window-definitions": {
+      "version": "0.0.0",
+      "signature": "36fa350f9021accd1ffef003f4e17b38",
+      "file": true
+    }
+  }
+}
