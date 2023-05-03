@@ -1,5 +1,5 @@
-import { css as d, LitElement as h, html as l } from "lit";
-import { property as p, customElement as b } from "lit/decorators.js";
+import { css as d, LitElement as h, html as p } from "lit";
+import { property as l, customElement as b } from "lit/decorators.js";
 var g = Object.defineProperty, w = Object.getOwnPropertyDescriptor, m = (t, r, s, o) => {
   for (var e = o > 1 ? void 0 : o ? w(r, s) : r, n = t.length - 1, a; n >= 0; n--)
     (a = t[n]) && (e = (o ? a(r, s, e) : a(e)) || e);
@@ -20,18 +20,20 @@ let i = class extends h {
     this.setAttributes && this.setAttributes({ message: o, company: e });
   }
   render() {
-    return l`<h1>Message</h1>
+    return p`<h1>Message</h1>
       <p>${this.message}</p>
       <p><a href=${this.coLinkMap.get(this.coCode)}>Company Link</a></p>
-      ${this.isEditMode ? l`<form @submit=${this.handleSubmit}>
+      ${this.isEditMode ? p`<form @submit=${this.handleSubmit}>
             <label for="company">Company</label>
             <select id="company" name="company">
               ${Array.from(this.coLinkMap.entries()).map(
-      ([t]) => l`<option value=${t}>${t}</option>`
+      ([t]) => p`<option value=${t}>${t}</option>`
     )}
             </select>
             <label for="message">Message</label>
-            <textarea name="message" id="message">${this.message}</textarea>
+            <textarea name="message" id="message" @keydown=${(t) => t.stopPropagation()}>
+${this.message}</textarea
+            >
             <button type="submit">Change</button>
           </form>` : ""}`;
   }
@@ -101,13 +103,13 @@ i.styles = d`
     }
   `;
 m([
-  p({ type: String })
+  l({ type: String })
 ], i.prototype, "message", 2);
 m([
-  p({ type: String, attribute: "company" })
+  l({ type: String, attribute: "company" })
 ], i.prototype, "coCode", 2);
 m([
-  p({
+  l({
     type: Boolean,
     attribute: "edit",
     converter(t) {

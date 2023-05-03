@@ -54,7 +54,9 @@ export class WcAttributesDemo extends LitElement {
               )}
             </select>
             <label for="message">Message</label>
-            <textarea name="message" id="message">${this.message}</textarea>
+            <textarea name="message" id="message" @keydown=${(event: KeyboardEvent) => event.stopPropagation()}>
+${this.message}</textarea
+            >
             <button type="submit">Change</button>
           </form>`
         : ""}`;
